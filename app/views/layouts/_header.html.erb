@@ -1,0 +1,37 @@
+<!-- HEADER -->
+<header>
+  <div class="wrapper cf">
+
+    <div id="logo">
+      <%= link_to image_tag('logo.png', alt: "Simpler", width: 245), root_url %>
+    </div>
+
+    <!-- nav -->
+    <ul id="nav" class="sf-menu">
+      <li class=" <%= active('home') %>" >
+        <%= link_to "Domů", root_url %>
+      </li>
+      <li class=" <%= active('program') %>">
+        <%= link_to 'Program', 'program' %>
+      </li>
+      <li class=" <%= active('novinky') %>">
+        <%= link_to 'Novinky', 'novinky' %>
+      </li>
+      <li><a href="page.html">ABOUT</a>
+        <ul>
+          <li><a href="page-elements.html">Elements</a></li>
+          <li><a href="page-icons.html">Icons</a></li>
+          <li><a href="page-typography.html">Typography</a></li>
+        </ul>
+      </li>
+      <li><a href="portfolio.html">WORK</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+    <div id="combo-holder"></div>
+    <!-- ends nav -->
+
+    <%= render 'layouts/slider' if current_page?('/') %>
+
+  </div>
+</header>
+<!-- ENDS HEADER -->
