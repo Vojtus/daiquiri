@@ -3,7 +3,7 @@
   <div class="wrapper cf">
 
     <div id="logo">
-      <%= link_to image_tag('logo.png', alt: "Simpler", width: 245), root_url %>
+      <%= link_to image_tag('logo.png', alt: "Logo", width: 245), root_path %>
     </div>
 
     <!-- nav -->
@@ -20,8 +20,10 @@
       <li class=" <%= active('o_daiquiri') %> ">
         <%= link_to "O Daiquiri", "o_daiquiri" %>
         <ul>
-          <li> <%= link_to 'Rer', '#' %> </li>
-          <li> <%= link_to 'Gal', '#' %> </li>
+          <li> <%= link_to 'Galerie', '#' %> </li>
+          <li> <%= link_to 'Nápojový lístek', '#' %> </li>
+          <li> <%= link_to 'Provozní řád', '#' %> </li>
+          <li> <%= link_to 'O baru Daiquiri', '#' %> </li>
         </ul>
       </li>
       <li>
