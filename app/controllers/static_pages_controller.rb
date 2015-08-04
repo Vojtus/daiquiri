@@ -1,36 +1,38 @@
 class StaticPagesController < ApplicationController
 
   def home
-
+    @drinks = Drink.all
   end
 
   def program
-
+    #
   end
 
   def novinky
-
+    #
   end
 
   def o_daiquiri
-
+    #
   end
 
   def galerie
-
+    #
   end
 
-  def napojivy_listek
-
-  end
-
-  def program
+  def napojovy_listek
+    #
   end
 
   def provozni_rad
+    #
   end
-  
-  def kontakt
 
+  def o_baru_daiquiri
+    #
+  end
+
+  def kontakt
+    #
   end
 end
