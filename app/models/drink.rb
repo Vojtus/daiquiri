@@ -8,4 +8,12 @@ class Drink < ActiveRecord::Base
   validates :zaklad,  presence: true
   validates :text1,   presence: true
   validates :img_url, presence: true
+
+  def previous
+    Drink.where(["id < ?", id]).last
+  end
+
+  def next
+    Drink.where(["id > ?", id]).first
+  end
 end

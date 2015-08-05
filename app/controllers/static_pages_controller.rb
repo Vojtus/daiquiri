@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @drinks = Drink.all
+    @slider = @drinks.sample(7)
   end
 
   def program

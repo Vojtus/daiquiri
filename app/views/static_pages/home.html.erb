@@ -15,14 +15,18 @@
 
   <!-- Filter container -->
   <div id="filter-container" class="cf">
+
     <% @drinks.each do |drink| %>
       <figure class="<%= drink.zaklad %>">
-        <a href="project.html" class="thumb"> <%= image_tag "#{drink.img_url}", width: 300, height: 90 %> </a>
+        <%= link_to image_tag("#{drink.img_url}", width: 300), drink_path(drink.id), class: "thumb" %>
         <figcaption>
-          <a href="project.html"><h3 class="heading"><%= drink.nazev %></h3></a>
+          <%= link_to drink do %>
+            <h3 class="heading"> <%= drink.nazev %> </h3>
+          <% end %>
           <%= drink.text1 %>
         </figcaption>
       </figure>
+
     <% end %>
   </div>
 </div>

@@ -6,9 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-10.times do
+50.times do
 
   zaklad = %w(vodka rum whisky tequila ostatní)
+
+  image_url = Faker::Avatar.image
 
   Drink.create( nazev:    Faker::Lorem.word,
                 autor:    Faker::Name.name,
@@ -17,7 +19,9 @@
                 zaklad:   zaklad.shuffle.first,
                 text1:    Faker::Lorem.paragraph + Faker::Lorem.paragraph,
                 text2:    Faker::Lorem.paragraph + Faker::Lorem.paragraph,
-                img_url:  Faker::Avatar.image
+                img_url:  image_url,
+                img_url2: "#{image_url[0...-12]}set=set2",
+                img_url3: "#{image_url[0...-12]}set=set3"
                  )
 
 end

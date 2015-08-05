@@ -1,0 +1,109 @@
+<!-- portfolio content-->
+    <div id="portfolio-content" class="cf">
+
+
+
+
+  <!-- project pager -->
+  <div class="project-pager cf">
+
+    <% if @drink.previous %>
+      <%= link_to @drink.previous, class: "previous-project" do %>
+        &#8592; Previous drink
+      <% end %>
+    <% end %>
+
+
+    <% if @drink.next %>
+      <%= link_to @drink.next, class: "next-project" do %>
+        Next project &#8594;
+      <% end %>
+    <% end %>
+  </div>
+  <!-- ENDS project pager -->
+
+
+    <!-- project box -->
+  <div id="project-box" class="cf">
+
+
+
+
+
+    <!-- slider -->
+    <div class="project-slider">
+          <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <%= image_tag @drink.img_url %>
+          </li>
+          <li>
+            <%= image_tag @drink.img_url2 %>
+          </li>
+          <li>
+            <%= image_tag @drink.img_url3 %>
+          </li>
+        </ul>
+      </div>
+    </div>
+        <!-- ENDS slider -->
+
+
+    <div class="info">
+          <p><strong>Autor: </strong> <%= @drink.autor %> </p>
+          <p><strong>Date: </strong> <%= @drink.datum %> </p>
+          <p><strong>Základ: </strong> <%= @drink.zaklad %> </p>
+
+          <!-- Noting to link it to "<p><a href="http://www.luiszuno.com" class="launch" >Launch Project</a></p> -->
+        </div>
+
+        <!-- entry-content -->
+        <div class="entry-content">
+
+          <h2 class="heading"> <%= @drink.nazev %> </h2>
+
+          <div class="multicolumn">
+
+          <p><%= @drink.text1 %></p>
+
+          <p><%= @drink.text2 %></p>
+
+          <p><%= @drink.text3 %></p>
+
+          <p><%= @drink.text4 %></p>
+
+          </div>
+        </div>
+        <!-- ENDS entry content -->
+
+      </div>
+    <!-- ENDS project box -->
+
+
+  <!-- related -->
+  <div class="related-projects">
+    <h4 class="related-heading">Related projects</h4>
+    <div class="related-list cf">
+
+      <% @related.each do |drink| %>
+      <figure>
+        <%= link_to( image_tag( drink.img_url, height: 72, style: overflow="hidden" ), drink, class: "thumb" ) %>
+        <%= link_to drink.nazev, drink, class: "heading" %>
+      </figure>
+
+      <% end %>
+
+    <!--  <figure>
+        <a href="#" class="thumb"><img src="img/dummies/slides/02.jpg" alt="Alt text" /></a>
+        <a href="single.html" class="heading">Pellentesque habitant morbi</a>
+      </figure>
+
+    -->
+
+    </div>
+  </div>
+  <!-- ENDS related -->
+
+
+  </div>
+  <!-- ENDS portfolio content-->

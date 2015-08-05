@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get   'napojovy_listek' => 'static_pages#napojovy_listek'
   get   'provozni_rad'    => 'static_pages#provozni_rad'
   get   'o_baru_daiquiri' => 'static_pages#o_baru_daiquiri'
+  resources :drinks
 end
