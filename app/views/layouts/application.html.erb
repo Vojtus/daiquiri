@@ -26,6 +26,11 @@
 
   <div id="main">
     <div class="wrapper cf">
+
+      <% flash.each do |message_type, message| %>
+        <div class="highlight"><%= message %></div>
+      <% end %>
+
       <%= yield %>
     </div>
   </div>

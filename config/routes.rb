@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   get   'napojovy_listek' => 'static_pages#napojovy_listek'
   get   'provozni_rad'    => 'static_pages#provozni_rad'
   get   'o_baru_daiquiri' => 'static_pages#o_baru_daiquiri'
-  resources :drinks
+  get   'login'           => 'sessions#new'
+  post  'login'           => 'sessions#create'
+  get   'administrace'    => 'drinks#index'
+  post  'drinks'          => 'drinks#edit_redirect'
+  delete 'logout'         => 'sessions#destroy'
+  resources :drinks, only: [:new, :show, :index, :edit]
 end

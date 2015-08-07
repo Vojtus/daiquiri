@@ -25,3 +25,6 @@
                  )
 
 end
+
+User.create!(jmeno: "Grimm", email: "grimm@example.com",
+            password: "password", password_confirmation: "password" )

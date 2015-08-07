@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804083419) do
+ActiveRecord::Schema.define(version: 20150807125646) do
 
   create_table "drinks", force: :cascade do |t|
     t.string   "nazev"
@@ -28,6 +28,27 @@ ActiveRecord::Schema.define(version: 20150804083419) do
     t.datetime "updated_at", null: false
     t.string   "img_url2"
     t.string   "img_url3"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "nazev"
+    t.string   "img_url"
+    t.text     "text"
+    t.date     "datum"
+    t.string   "tags"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "jmeno"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "email"
   end
 
 end
