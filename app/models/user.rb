@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :posts
-  has_many :drinks
 
   # Bcrypt's stuff
   has_secure_password

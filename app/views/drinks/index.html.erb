@@ -4,18 +4,23 @@
   Create a <%= link_to 'new drink?', new_drink_path, class: 'link-button' %>
 </p>
   <%= form_for @drink,  html: {id: "contactForm"} do |f| %>
-<fieldset>
-    <%= f.select :id, @drinks.collect { |x| [x.nazev, x.id] }  %>
-    <%= f.submit 'edit', id: 'submit' %>
-</fieldset>
+    <fieldset>
+      <%= f.select :id, @drinks.collect { |x| [x.nazev, x.id] }  %>
+      <%= f.submit 'edit drink', id: 'submit' %>
+    </fieldset>
   <% end %>
 
 <p>
-  Create a <%= link_to 'new post', '#' %>
+  Create a <%= link_to 'new post', new_post_path %>
 </p>
 <p>
-  Edid a <%= link_to 'post', '#' %>
+  <%= form_for @post, html: { id: "contactForm" } do |f| %>
+    <fieldset>
+      <%= f.select :id, @posts.collect { |x| [x.nazev, x.id] }  %>
+      <%= f.submit 'edit post', id: 'submit' %>
+    </fieldset>
+  <% end %>
 </p>
 <p>
-  Add <%= link_to 'new user', '#' %>
+  Add <%= link_to 'new user', new_user_path %>
 </p>

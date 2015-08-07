@@ -12,18 +12,30 @@
 
   image_url = Faker::Avatar.image
 
-  Drink.create( nazev:    Faker::Lorem.word,
+  Drink.create( nazev:    Faker::Lorem.word.capitalize,
                 autor:    Faker::Name.name,
                 datum:    Faker::Date.between(50.years.ago, Date.today),
                 misto:    Faker::Address.city,
                 zaklad:   zaklad.shuffle.first,
-                text1:    Faker::Lorem.paragraph + Faker::Lorem.paragraph,
-                text2:    Faker::Lorem.paragraph + Faker::Lorem.paragraph,
+                text1:    Faker::Lorem.paragraph + " " + Faker::Lorem.paragraph,
+                text2:    Faker::Lorem.paragraph + " " + Faker::Lorem.paragraph,
                 img_url:  image_url,
                 img_url2: "#{image_url[0...-12]}set=set2",
                 img_url3: "#{image_url[0...-12]}set=set3"
                  )
 
+end
+
+5.times do
+
+  tag_token = rand(4) + 2
+
+  Post.create(  nazev:    Faker::Lorem.word.capitalize,
+                img_url:  Faker::Avatar.image,
+                text:     Faker::Lorem.paragraph + " " + Faker::Lorem.paragraph,
+                user:     User.all.sample,
+                tags:     Faker::Lorem.words(tag_token).join(" ")
+                )
 end
 
 User.create!(jmeno: "Grimm", email: "grimm@example.com",

@@ -4,6 +4,8 @@ class DrinksController < ApplicationController
     redirect_to root_path unless logged_in?
     @drinks =  Drink.all
     @drink = Drink.new
+    @posts = Post.all
+    @post = Post.new
   end
 
   def new
@@ -28,7 +30,12 @@ class DrinksController < ApplicationController
   end
 
   def edit_redirect
-    @drink = Drink.find_by(id: params[:drink][:id])
-    redirect_to edit_drink_path(@drink)
+    if params[:commit] == 'edit drink'
+      @drink = Drink.find_by(id: params[:drink][:id])
+      redirect_to edit_drink_path(@drink)
+    elsif params[:commit] == 'edit post'
+      @post = Post.find_by(id: params[:post][:id])
+      redirect_to edit_post_path(@post)
     end
+  end
 end
