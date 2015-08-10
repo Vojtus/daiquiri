@@ -39,5 +39,16 @@ end
                 )
 end
 
+3.times do
+
+  gallery = Gallery.create!(nazev: Faker::Lorem.word.capitalize)
+
+  [10..30].rand.times do
+    Image.create!(remote_image_url: Faker::Avatar.image,
+                  gallery_id:       gallery.id)
+  end
+
+end
+
 User.create!(jmeno: "Grimm", email: "grimm@example.com",
             password: "password", password_confirmation: "password" )
