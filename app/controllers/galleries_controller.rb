@@ -9,7 +9,7 @@ class GalleriesController < ApplicationController
   end
 
   def index
-
+    @galleries = Gallery.all
   end
 
   def edit
@@ -26,5 +26,5 @@ class GalleriesController < ApplicationController
 
   private
 
-  
+
 end

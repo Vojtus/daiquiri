@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get     'novinky'         => 'static_pages#novinky'
   get     'o_daiquiri'      => 'static_pages#o_daiquiri'
   get     'kontakt'         => 'static_pages#kontakt'
-  get     'galerie'         => 'static_pages#galerie'
+  get     'galerie'         => 'gallery#index'
   get     'napojovy_listek' => 'static_pages#napojovy_listek'
   get     'provozni_rad'    => 'static_pages#provozni_rad'
   get     'o_baru_daiquir'  => 'static_pages#o_baru_daiquiri'
