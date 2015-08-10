@@ -1,6 +1,6 @@
 module StaticPagesHelper
-  def active(action)
-    if current_page? controller: "static_pages", action: action
+  def active(action, controller = 'static_pages')
+    if current_page? controller: controller, action: action
       'current-menu-item'
     end
   end

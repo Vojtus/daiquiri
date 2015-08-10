@@ -35,13 +35,13 @@
           <div class="flexslider">
         <ul class="slides">
           <li>
-            <%= image_tag @drink.img_url %>
+            <%= image_tag(@drink.image_url || @drink.image)  %>
           </li>
           <li>
-            <%= image_tag @drink.img_url2 %>
+            <%= image_tag @drink.image2_url %>
           </li>
           <li>
-            <%= image_tag @drink.img_url3 %>
+            <%= image_tag @drink.image3_url %>
           </li>
         </ul>
       </div>
@@ -87,7 +87,7 @@
 
       <% @related.each do |drink| %>
       <figure>
-        <%= link_to( image_tag( drink.img_url, height: 72, style: overflow="hidden" ), drink, class: "thumb" ) %>
+        <%= link_to( image_tag( drink.image_url, height: 72, style: overflow="hidden" ), drink, class: "thumb" ) %>
         <%= link_to drink.nazev, drink, class: "heading" %>
       </figure>
 

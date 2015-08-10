@@ -19,9 +19,9 @@
                 zaklad:   zaklad.shuffle.first,
                 text1:    Faker::Lorem.paragraph + " " + Faker::Lorem.paragraph,
                 text2:    Faker::Lorem.paragraph + " " + Faker::Lorem.paragraph,
-                img_url:  image_url,
-                img_url2: "#{image_url[0...-12]}set=set2",
-                img_url3: "#{image_url[0...-12]}set=set3"
+                remote_image_url:  image_url,
+                remote_image2_url: "#{image_url[0...-12]}set=set2",
+                remote_image3_url: "#{image_url[0...-12]}set=set3"
                  )
 
 end
@@ -31,10 +31,11 @@ end
   tag_token = rand(4) + 2
 
   Post.create(  nazev:    Faker::Lorem.word.capitalize,
-                img_url:  Faker::Avatar.image,
+                remote_image_url:  Faker::Avatar.image,
                 text:     Faker::Lorem.paragraph + " " + Faker::Lorem.paragraph,
                 user:     User.all.sample,
-                tags:     Faker::Lorem.words(tag_token).join(" ")
+                tags:     Faker::Lorem.words(tag_token).join(" "),
+                datum:    Faker::Date.between(2.years.ago, Date.today)
                 )
 end
 

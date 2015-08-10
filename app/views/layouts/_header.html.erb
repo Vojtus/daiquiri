@@ -11,19 +11,15 @@
       <li class=" <%= active('home') %>" >
         <%= link_to "Domů", root_url %>
       </li>
-      <li class=" <%= active('program') %>">
-        <%= link_to 'Program', 'program' %>
-      </li>
-      <li class=" <%= active('novinky') %>">
-        <%= link_to 'Novinky', 'novinky' %>
+      <li class=" <%= active('index', 'posts') %>">
+        <%= link_to 'Program', '/program' %>
       </li>
       <li class=" <%= active('o_daiquiri') %> ">
-        <%= link_to "O Daiquiri", "o_daiquiri" %>
+        <%= link_to "O Daiquiri", "/o_daiquiri" %>
         <ul>
           <li> <%= link_to 'Galerie', 'galerie' %> </li>
-          <li> <%= link_to 'Nápojový lístek', 'napojovy_listek' %> </li>
-          <li> <%= link_to 'Provozní řád', 'provozni_rad' %> </li>
-          <li> <%= link_to 'O baru Daiquiri', 'o_baru_daiquiri' %> </li>
+          <li> <%= link_to 'Nápojový lístek', '/napojovy_listek' %> </li>
+          <li> <%= link_to 'Provozní řád', '/provozni_rad' %> </li>
         </ul>
       </li>
       <li>

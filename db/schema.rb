@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807125646) do
+ActiveRecord::Schema.define(version: 20150810161806) do
 
   create_table "drinks", force: :cascade do |t|
     t.string   "nazev"
@@ -23,16 +23,16 @@ ActiveRecord::Schema.define(version: 20150807125646) do
     t.text     "text2"
     t.text     "text3"
     t.text     "text4"
-    t.string   "img_url"
+    t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "img_url2"
-    t.string   "img_url3"
+    t.string   "image2"
+    t.string   "image3"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string   "nazev"
-    t.string   "img_url"
+    t.string   "image"
     t.text     "text"
     t.date     "datum"
     t.string   "tags"

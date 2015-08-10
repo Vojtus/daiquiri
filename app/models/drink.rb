@@ -7,7 +7,15 @@ class Drink < ActiveRecord::Base
   validates :misto,   presence: true
   validates :zaklad,  presence: true
   validates :text1,   presence: true
-  validates :img_url, presence: true
+  validates :image,   presence: true
+  validates :image2,  presence: true
+  validates :image3,  presence: true
+
+
+  mount_uploader :image, ImageUploader
+  mount_uploader :image2, ImageUploader
+  mount_uploader :image3, ImageUploader
+
 
   def previous
     Drink.where(["id < ?", id]).last

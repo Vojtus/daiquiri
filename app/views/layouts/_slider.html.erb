@@ -9,7 +9,7 @@
 
     <% @slider.each do |drink| %>
       <li>
-        <%= image_tag drink.img_url, height: 367 %>
+        <%= image_tag drink.image_url, height: 367 %>
         <div class="slider-description">
           <h4><%= drink.nazev %></h4>
           <p><%= drink.text1 %></p>
@@ -26,7 +26,7 @@
     <div class="navigator-wrapper">
           <ul class="navigator-wrap-inner">
             <% @slider.each do |drink| %>
-              <li> <%= image_tag drink.img_url, height: 73 %> </li>
+              <li> <%= image_tag drink.image_url, height: 73 %> </li>
             <% end %>
           </ul>
     </div>

@@ -1,2 +1,37 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+
+<div id="posts-list" class="cf">
+
+    <% @posts.each do |post| %>
+    <!-- Image -->
+  	<article class="format-image">
+  	  <div class="feature-image">
+        <%= image_tag post.image_url.to_s %>
+  		</div>
+
+  		<div class="box cf">
+
+  		  <div class="entry-date">
+          <div class="number"><%= post.datum.strftime("%d") if post.datum %></div>
+          <div class="month"><%= post.datum.strftime("%B")[0...3] if post.datum %></div>
+        </div>
+
+        <div class="excerpt">
+    		  <a href="#" class="post-heading" ><%= post.nazev %></a>
+          <p>
+            <%= post.text %>
+          </p>
+    		</div>
+
+        <!-- tags -->
+        <div class="meta">
+          <% tags = post.tags.split(" ") # Tags to array %>
+          <% tags.each do |tag| %>
+    			  <span class="tags"><%= tag %></span>
+          <% end %>
+    		</div>
+        <!-- end tags -->
+      </div>
+    </article>
+  <!-- ENDS Image -->
+  <% end %>
+</div>

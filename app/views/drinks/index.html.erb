@@ -1,5 +1,7 @@
 <h4 class="heading">Welcome to the administration page, what would you like to do?</h4>
 <br>
+<%= link_to 'logout', '/logout', method: :delete %>
+<br>
 <p>
   Create a <%= link_to 'new drink?', new_drink_path, class: 'link-button' %>
 </p>

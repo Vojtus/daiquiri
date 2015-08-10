@@ -9,10 +9,6 @@ class StaticPagesController < ApplicationController
     #
   end
 
-  def novinky
-    #
-  end
-
   def o_daiquiri
     #
   end
@@ -29,9 +25,6 @@ class StaticPagesController < ApplicationController
     #
   end
 
-  def o_baru_daiquiri
-    #
-  end
 
   def kontakt
     #

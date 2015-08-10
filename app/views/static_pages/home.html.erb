@@ -1,5 +1,5 @@
 <%= provide(:title, "Domů") %>
-<h2>something</h2>
+
 <!-- featured -->
 
 <div class="home-featured">
@@ -18,7 +18,7 @@
 
     <% @drinks.each do |drink| %>
       <figure class="<%= drink.zaklad %>">
-        <%= link_to image_tag("#{drink.img_url}", width: 300), drink_path(drink.id), class: "thumb" %>
+        <%= link_to image_tag("#{drink.image_url}", width: 300), drink_path(drink.id), class: "thumb" %>
         <figcaption>
           <%= link_to drink do %>
             <h3 class="heading"> <%= drink.nazev %> </h3>
@@ -26,7 +26,6 @@
           <%= drink.text1 %>
         </figcaption>
       </figure>
-
     <% end %>
   </div>
 </div>

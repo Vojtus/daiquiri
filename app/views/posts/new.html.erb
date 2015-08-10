@@ -1,2 +1,24 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<%= form_for @post, html: { id: "contactForm", multupart: true } do |f| %>
+
+  <%= f.label :nazev %>
+  <%= f.text_field :nazev %>
+
+  <%= f.label :image %>
+  <%= f.file_field :image %><br>
+  <%= f.label :image, 'or link:' %>
+
+  <%= f.text_field :remote_image_url %>
+
+  <%= f.label :text %>
+  <%= f.text_area :text %>
+
+  <%= f.label :datum %>
+  <%= f.text_field :datum %>
+
+  <%= f.label :tags, 'Tagy: Odděluj mezerou!' %>
+  <%= f.text_field :tags %>
+
+  <p>
+    <%= f.submit 'Vytvořit post!' %>
+  </p>
+<% end %>

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root  'static_pages#home'
-  resources :drinks, only: [:new, :show, :index, :edit]
-  resources :posts, only: [:new, :show, :edit]
-  resources :users, only: [:new, :create]
-  get     'program'         => 'static_pages#program'
+  resources :drinks, only: [:new, :show, :index, :edit, :update, :destroy]
+  resources :posts, only: [:new, :show, :edit, :update, :destroy]
+  resources :users, only: [:new, :create, :destroy]
+  get     'program'         => 'posts#index'
   get     'novinky'         => 'static_pages#novinky'
   get     'o_daiquiri'      => 'static_pages#o_daiquiri'
   get     'kontakt'         => 'static_pages#kontakt'
@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   post    'drinks'          => 'drinks#edit_redirect'
   delete  'logout'          => 'sessions#destroy'
   post    'posts'           => 'drinks#edit_redirect'
+  get    'post_create'     => 'posts#create'
 
 end
