@@ -25,7 +25,7 @@ Rails.application.configure do
   config.serve_static_files = true #ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Heroku debugging
-  # config.consider_all_requests_local = true
+  config.consider_all_requests_local = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
