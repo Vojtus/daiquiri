@@ -24,6 +24,6 @@ module Daiquiri
     config.active_record.raise_in_transactional_callbacks = true
 
     # Disable precompilation
-    #config.assets.precompile = []
+    config.assets.precompile = []
   end
 end
