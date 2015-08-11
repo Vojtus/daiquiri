@@ -43,7 +43,7 @@ end
 
   gallery = Gallery.create!(nazev: Faker::Lorem.word.capitalize)
 
-  [10..30].rand.times do
+  30.times do
     Image.create!(remote_image_url: Faker::Avatar.image,
                   gallery_id:       gallery.id)
   end

@@ -1,0 +1,19 @@
+<!-- page content-->
+<div id="page-content" class="cf">
+
+<!-- entry-content -->
+<div class="entry-content cf">
+
+  <% @galleries.each do |gallery| %>
+    <div style="padding-top: 100px">
+      <h4 class="heading"><%= gallery.nazev %></h4>
+      <br>
+      <% gallery.images.each do |image| %>
+
+        <%= link_to (image_tag image.image_url(:thumb).to_s), image.image_url, rel: 'lightbox[#{gallery.nazev}]' %>
+
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
